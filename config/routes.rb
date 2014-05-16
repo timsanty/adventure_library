@@ -2,6 +2,11 @@ AdventureLibrary::Application.routes.draw do
   resources :adventures do
     resources :pages
   end
+
+  root 'adventures#index'
+
+  get '/new', to: 'adventures#new'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

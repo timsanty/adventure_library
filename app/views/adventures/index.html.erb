@@ -1,0 +1,14 @@
+This is the Index</br>
+</br>
+
+<%= link_to "add Adventure", new_adventure_path, :class => "btn btn-success" %>
+
+<% @adventures.each do |adventure| %>
+	TITLE <%= adventure.title, adventure_path(adventure) %>
+	AUTHOR <%= adventure.author %>
+	<%= link_to "edit", edit_adventure_path(adventure), :class =>"btn btn-info btn-sm"%>
+
+	<% end %>
+
+<h2>Add your library</h2>
+
