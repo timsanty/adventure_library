@@ -1,0 +1,8 @@
+<h1>Welcome home!</h1>
+<h2>All your libraries are listed below</h2>
+
+  <% @library.each do |library| %>
+    <li><%= @library.url %></li>
+  <% end %>
+
+  <%= link_to adventures_path %>

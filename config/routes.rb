@@ -1,12 +1,49 @@
 AdventureLibrary::Application.routes.draw do
+  root 'libraries#index'
+
   resources :adventures do
     resources :pages
   end
+ 
+ resources :libraries do
+    resources :adventures
+  end
 
-  root 'adventures#index'
-
-  get '/new', to: 'adventures#new'
-
+#                 Prefix Verb   URI Pattern                                            Controller#Action
+#                   root GET    /                                                      adventures#index
+#        adventure_pages GET    /adventures/:adventure_id/pages(.:format)              pages#index
+#                        POST   /adventures/:adventure_id/pages(.:format)              pages#create
+#     new_adventure_page GET    /adventures/:adventure_id/pages/new(.:format)          pages#new
+#    edit_adventure_page GET    /adventures/:adventure_id/pages/:id/edit(.:format)     pages#edit
+#         adventure_page GET    /adventures/:adventure_id/pages/:id(.:format)          pages#show
+#                        PATCH  /adventures/:adventure_id/pages/:id(.:format)          pages#update
+#                        PUT    /adventures/:adventure_id/pages/:id(.:format)          pages#update
+#                        DELETE /adventures/:adventure_id/pages/:id(.:format)          pages#destroy
+#             adventures GET    /adventures(.:format)                                  adventures#index
+#                        POST   /adventures(.:format)                                  adventures#create
+#          new_adventure GET    /adventures/new(.:format)                              adventures#new
+#         edit_adventure GET    /adventures/:id/edit(.:format)                         adventures#edit
+#              adventure GET    /adventures/:id(.:format)                              adventures#show
+#                        PATCH  /adventures/:id(.:format)                              adventures#update
+#                        PUT    /adventures/:id(.:format)                              adventures#update
+#                        DELETE /adventures/:id(.:format)                              adventures#destroy
+#    adventure_libraries GET    /adventures/:adventure_id/libraries(.:format)          libraries#index
+#                        POST   /adventures/:adventure_id/libraries(.:format)          libraries#create
+#  new_adventure_library GET    /adventures/:adventure_id/libraries/new(.:format)      libraries#new
+# edit_adventure_library GET    /adventures/:adventure_id/libraries/:id/edit(.:format) libraries#edit
+#      adventure_library GET    /adventures/:adventure_id/libraries/:id(.:format)      libraries#show
+#                        PATCH  /adventures/:adventure_id/libraries/:id(.:format)      libraries#update
+#                        PUT    /adventures/:adventure_id/libraries/:id(.:format)      libraries#update
+#                        DELETE /adventures/:adventure_id/libraries/:id(.:format)      libraries#destroy
+#                        GET    /adventures(.:format)                                  adventures#index
+#                        POST   /adventures(.:format)                                  adventures#create
+#                        GET    /adventures/new(.:format)                              adventures#new
+#                        GET    /adventures/:id/edit(.:format)                         adventures#edit
+#                        GET    /adventures/:id(.:format)                              adventures#show
+#                        PATCH  /adventures/:id(.:format)                              adventures#update
+#                        PUT    /adventures/:id(.:format)                              adventures#update
+#                        DELETE /adventures/:id(.:format)                              adventures#destroy               
+                       
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

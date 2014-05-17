@@ -19,14 +19,14 @@ ActiveRecord::Schema.define(version: 20140515231300) do
   create_table "adventures", force: true do |t|
     t.string   "title"
     t.string   "author"
-    t.string   "GUID"
+    t.string   "guid"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "library_id"
   end
 
   create_table "libraries", force: true do |t|
-    t.text     "url"
+    t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

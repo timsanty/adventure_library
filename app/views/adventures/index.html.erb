@@ -1,14 +1,12 @@
-This is the Index</br>
-</br>
+<h1>Adventures</h1>
 
-<%= link_to "add Adventure", new_adventure_path, :class => "btn btn-success" %>
+<%= link_to "Add Adventure", new_adventure_path, :class => "btn btn-success" %>  
 
-<% @adventures.each do |adventure| %>
-	TITLE <%= adventure.title, adventure_path(adventure) %>
-	AUTHOR <%= adventure.author %>
-	<%= link_to "edit", edit_adventure_path(adventure), :class =>"btn btn-info btn-sm"%>
+  <% @adventures.each do |adventure| %>
+    <li><b><%= adventure.author %>:
+    <%= link_to adventure.title, adventure_path(adventure) %>
+    <%#= @library.url %>
+    <%= link_to "Edit", edit_adventure_path(adventure), :class => "btn btn-info btn-sm" %></b></li>
+  <% end %>
 
-	<% end %>
-
-<h2>Add your library</h2>
 

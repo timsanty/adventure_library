@@ -1,0 +1,8 @@
+<h1>Add a library</h1>
+
+<!-- add new library from external site to list above -->
+<h2>Add your library</h2>
+<%= form_for @library => { :action => :create } do |f| %>
+  <%= f.text_field :url, placeholder: "Library url: " %>
+  <%= f.submit %>
+<% end %>
