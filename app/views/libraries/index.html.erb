@@ -2,7 +2,11 @@
 <h2>All your libraries are listed below</h2>
 
   <% @library.each do |library| %>
-    <li><%= @library.url %></li>
+  		<% @adventure.each do |adventure| %>
+
+    <li><%= library.url %></li>
+    <li><%= adventure.title %></li>
+    <% end %>
   <% end %>
 
-  <%= link_to adventures_path %>
+  <%= link_to new_library_path %>

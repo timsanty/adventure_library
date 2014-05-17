@@ -1,13 +1,19 @@
 AdventureLibrary::Application.routes.draw do
   root 'libraries#index'
-
+ 
   resources :adventures do
-    resources :pages
-  end
+    resources :pages 
+    end
+
  
  resources :libraries do
     resources :adventures
   end
+
+
+  # resources :adventures do
+  #   resources :pages
+  # end
 
 #                 Prefix Verb   URI Pattern                                            Controller#Action
 #                   root GET    /                                                      adventures#index
